@@ -19,3 +19,5 @@ mobi: $(TITLE).mobi
 
 clean:
 	rm -f $(TITLE).epub $(TITLE).html $(TITLE).mobi
+
+.PHONY: all html epub mobi clean
