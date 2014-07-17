@@ -1,12 +1,14 @@
 TITLE=ttir
 
-all: html epub mobi
+all: html epub mobi pdf
 
 html: $(TITLE).html
 
 epub: $(TITLE).epub
 
 mobi: $(TITLE).mobi
+
+pdf: $(TITLE).pdf
 
 %.html: %.md
 	pandoc -s "$<" -o "$@"
@@ -16,6 +18,9 @@ mobi: $(TITLE).mobi
 
 %.mobi: %.epub
 	ebook-convert "$<" "$@"
+
+%.pdf: %.odt
+	libreoffice --headless --convert-to pdf "$<"
 
 clean:
 	rm -f $(TITLE).epub $(TITLE).html $(TITLE).mobi
