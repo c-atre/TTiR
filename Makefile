@@ -25,7 +25,7 @@ PDF_FLAGS+=--latex-engine=xelatex -V template-path:$(TEMPLATE_PATH)/
 .PHONY: dep all html epub mobi odt pdf
 
 dep:
-	git submodule update --init --recursive --depth 1
+	@git submodule update --init --recursive --depth 1
 
 all: html epub mobi odt pdf
 
