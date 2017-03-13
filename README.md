@@ -35,7 +35,7 @@ make mobi
 ```
 
 * ein **OpenOffice-/LibreOffice-Dokument** (kann auch mit neueren Versionen von
-  Microsoft Word geöffnet werden)
+  Microsoft Word geöffnet werden),
 
 ```bash
 make odt
