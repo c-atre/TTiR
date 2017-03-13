@@ -22,7 +22,10 @@ ODT_FLAGS+=--data-dir=$(TEMPLATE_PATH)/data
 PDF_FLAGS:=--toc --template=$(TEMPLATE_PATH)/c-atre.latex
 PDF_FLAGS+=--latex-engine=xelatex -V template-path:$(TEMPLATE_PATH)/
 
-.PHONY: all html epub mobi odt pdf
+.PHONY: dep all html epub mobi odt pdf
+
+dep:
+	git submodule update --init --recursive --depth 1
 
 all: html epub mobi odt pdf
 
@@ -36,19 +39,19 @@ odt: $(TITLE).odt
 
 pdf: $(TITLE).pdf
 
-%.html: %.md
+%.html: %.md dep
 	pandoc $(HTML_FLAGS) "$<" -o "$@"
 
-%.epub: %.md
+%.epub: %.md dep
 	pandoc $(EPUB_FLAGS) "$<" -o "$@"
 
-%.mobi: %.epub
+%.mobi: %.epub dep
 	ebook-convert "$<" "$@"
 
-%.odt: %.md
+%.odt: %.md dep
 	pandoc $(ODT_FLAGS) "$<" -o "$@"
 
-%.pdf: %.md
+%.pdf: %.md dep
 	pandoc $(PDF_FLAGS) "$<" -o "$@"
 
 clean:
