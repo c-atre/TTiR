@@ -1,13 +1,17 @@
 ---
-title: 'The Time is Right'
-author: 'Ein Science-Fiction-Theaterstück des collectivdrama c-atre nach einer Idee von yetzt'
-date: 'UA: 3. Juli 2014, c-base Berlin, in einer Inszenierung des collectivdrama c-atre'
+title: The Time is Right
+author: Ein Science-Fiction-Theaterstück des collectivdrama c-atre nach einer Idee von yetzt
+premiere:
+    date: 3\. Juli 2017
+    location: c-base Berlin
+lang: de
+rights:
+    license:
+        short: CC BY 4.0
+        long: Creative Commons Namensnennung 4.0 International Lizenz
+        link: https://creativecommons.org/licenses/by/4.0/
+    rightsholder: c-atre collectivdrama
 ...
-
-[**CC BY 4.0**](http://creativecommons.org/licenses/by/4.0/)
-
-This work is licensed under a [Creative Commons Attribution 4.0
-International License](http://creativecommons.org/licenses/by/4.0/).
 
 Abstrakt
 ========
