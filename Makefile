@@ -24,10 +24,10 @@ PDF_FLAGS+=--latex-engine=xelatex -V template-path:$(TEMPLATE_PATH)/
 
 .PHONY: dep all html epub mobi odt pdf
 
+all: html epub mobi odt pdf
+
 dep:
 	@git submodule update --init --recursive --depth 1
-
-all: html epub mobi odt pdf
 
 html: $(TITLE).html
 
@@ -59,5 +59,3 @@ clean:
 
 dist:
 	tar -czf $(TITLE).tar.gz Makefile LICENSE $(TITLE).md
-
-.PHONY: all html epub mobi clean dist
